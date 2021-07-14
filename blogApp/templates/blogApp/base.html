@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +18,10 @@
 
     <title>Document</title>
 </head>
-<body>
+<body class="bg-secondary">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand animate__heartBeat" href="index.hhtml"><i class="fas fa-box-open"></i> Pedidos </a>
+            <a class="navbar-brand animate__heartBeat" href="{% url 'home' %}"><i class="fas fa-box-open"></i> Pedidos </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,19 +29,19 @@
             <div class="collapse navbar-collapse animate__headShake" id="navbarNav">
                 <ul class="navbar-nav ms-auto"> <!-- al ms lo encontre de pedo -->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html"><i class="fas fa-home"></i> Home</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="contacto.html"><i class="fas fa-concierge-bell"></i> Servicios</a>
+                        <a class="nav-link active" href="{% url 'servicios' %}"><i class="fas fa-concierge-bell"></i> Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="acerca_de.html"><i class="fas fa-store"></i> Tienda</a>
+                        <a class="nav-link active" href="{% url 'tienda' %}"><i class="fas fa-store"></i> Tienda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="acerca_de.html"><i class="fas fa-address-book"></i> Contacto</a>
+                        <a class="nav-link active" href="{% url 'contacto' %}"><i class="fas fa-address-book"></i> Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="acerca_de.html"><i class="fas fa-atlas"></i> Blog</a>
+                        <a class="nav-link active" href="{% url 'blog' %}"><i class="fas fa-atlas"></i> Blog</a>
                     </li>
                 </ul>
             </div>
@@ -48,13 +49,16 @@
     </nav>
     
     <!-- contenido dinamico -->
+    {% block content %}
+    {% endblock %}
+    <!-- fin contenido dinamico -->
     <!-- fin contenido dinamico -->
 
     <!-- footer -->
-    <footer class="text-center text-lg-start bg-light text-muted">
+    <footer class="text-center text-lg-start bg-dark text-muted">
         <!-- Section: Social media -->
         <section
-          class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+          class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom border-secondary">
           <!-- Left -->
           <div class="me-5 d-none d-lg-block">
             <span>Get connected with us on social networks:</span>
@@ -86,7 +90,7 @@
         </section>
         <!-- Section: Social media -->      
         <!-- Copyright -->
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        <div class="text-center p-4 bg-dark">
           © 2021 Copyright:
           <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
