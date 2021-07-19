@@ -29,19 +29,19 @@
             <div class="collapse navbar-collapse animate__headShake" id="navbarNav">
                 <ul class="navbar-nav ms-auto"> <!-- al ms lo encontre de pedo -->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
+                        <a class="nav-link {% if request.path == '/blogApp/' %} active {% endif %}" aria-current="page" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'servicios' %}"><i class="fas fa-concierge-bell"></i> Servicios</a>
+                        <a class="nav-link {% if request.path == '/blogApp/servicios/' %}active{% endif %}" href="{% url 'servicios' %}"><i class="fas fa-concierge-bell"></i> Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'tienda' %}"><i class="fas fa-store"></i> Tienda</a>
+                        <a class="nav-link {% if request.path == '/blogApp/tienda/' %} active{% endif %}" href="{% url 'tienda' %}"><i class="fas fa-store"></i> Tienda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'contacto' %}"><i class="fas fa-address-book"></i> Contacto</a>
+                        <a class="nav-link {% if request.path == '/blogApp/contacto/' %}active{% endif %}" href="{% url 'contacto' %}"><i class="fas fa-address-book"></i> Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'blog' %}"><i class="fas fa-atlas"></i> Blog</a>
+                        <a class="nav-link {% if request.path == '/blogApp/blog/' %}active{% endif %}" href="{% url 'blog' %}"><i class="fas fa-atlas"></i> Blog</a>
                     </li>
                 </ul>
             </div>
