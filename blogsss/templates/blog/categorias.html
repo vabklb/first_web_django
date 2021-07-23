@@ -20,11 +20,10 @@
             {% endfor %}
         </div>
         <div class="col-12 bg-dark mb-3">
-            <h3 class="text-secondary text-center">Categorias</h3>
+            <h3 class="text-secondary text-center">Categoria</h3>
             <div class="d-flex">
-                {% for i in categoria %}
-                    <a href="categoria/{{i.id}}/" class="text-info  m-auto text-decoration-none mb-3">{{i.name}}</a>
-                {% endfor %}
+                <a href="{% url 'blog' %}" class="m-auto text-info"> <-- Volver</a>
+                <a href="" class="text-info  m-auto text-decoration-none mb-3">{{categoria}}</a>
             </div>
         </div>
     </div>

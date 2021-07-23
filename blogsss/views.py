@@ -6,3 +6,8 @@ def blog(request):
     post = Post.objects.all()
     categoria = Categoria.objects.all()
     return render(request, 'blog/blog.html', {'post': post, 'categoria': categoria})
+
+def categoria(request, categoria_id):
+    categoria = Categoria.objects.get(id = categoria_id)
+    post = Post.objects.filter(categorias= categoria)
+    return render(request, 'blog/categorias.html', {'post': post, 'categoria': categoria})

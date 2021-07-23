@@ -7,6 +7,3 @@ def home(request):
 
 def tienda(request):
     return render(request, 'blogApp/tienda.html')
-
-def contacto(request):
-    return render(request, 'blogApp/contacto.html')
